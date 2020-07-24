@@ -19,13 +19,13 @@ jobs:
         java-version: 1.8
     - name: Build
       run: |
-        mkdir staging
         mkdir classes
         javac -sourcepath src -d classes src/Main.java
-        jar cvfm sample.jar MANIFEST.MF -C classes ./staging
+        mkdir classes/staging
+        jar cvfm sample.jar MANIFEST.MF -C classes staging
         
 
     - uses: actions/upload-artifact@v1
       with:
         name: ReverseCharacter
-        path: staging
+        path: classes/staging
