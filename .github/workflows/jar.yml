@@ -23,6 +23,7 @@ jobs:
     - name: Build with Maven
       run: |
         mkdir staging
+        mkdir classes
         javac -sourcepath src -d classes src/Main.java
         jar cvfm sample.jar MANIFEST.MF -C classes ./staging
         
