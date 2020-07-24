@@ -24,7 +24,7 @@ jobs:
       run: |
         mkdir staging
         javac -sourcepath src -d classes src/Main.java
-        jar cvfm sample.jar MANIFEST.MF -C classes staging
+        jar cvfm sample.jar MANIFEST.MF -C classes ./staging
         
 
     - uses: actions/upload-artifact@v1
