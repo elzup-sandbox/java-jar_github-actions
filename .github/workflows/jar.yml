@@ -22,10 +22,9 @@ jobs:
         mkdir classes
         javac -sourcepath src -d classes src/Main.java
         jar cvfm ReverseCharacter.jar MANIFEST.MF -C classes .
-        mv ReverseCharacter.jar staging
 
     - uses: actions/upload-artifact@v1
       with:
         name: ReverseCharacter
-        path: staging
+        path: ReverseCharacter.jar
 
